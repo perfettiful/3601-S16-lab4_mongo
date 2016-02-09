@@ -7,6 +7,7 @@ angular.module("appModule")
         var self = this;
 
         self.textField = "";
+        self.weightField = "";
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         self.data = [];
@@ -20,11 +21,15 @@ angular.module("appModule")
         self.getPets();
 
         self.addData = function(){
-            if(self.textField.length >= 1) {
+            if(self.textField.length >= 1 && self.weight.length >= 1) {
                 $http.post('api/pets', {text: self.textField}).success(function(){
                     self.getPets();
                 });
+                $http.post('api/pets', {weight: self.weightField}).success(function(){
+                    self.getPets();
+                });
                 self.textField = "";
+                self.weightField = "";
             }
         };
 

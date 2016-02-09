@@ -58,7 +58,7 @@
 
 ## Part 2: Add another field to pet data.
 
-- [ ] Add a numeric field to the pet model (say, for example, weight).
+- [x] Add a numeric field to the pet model (say, for example, weight).
 - [ ] Add a field to enter weight when a new pet document is created.
 - [ ] Add a field in the main page to show the heaviest of all pets and its weight.
 - [ ] Remember to practice TDD and perform frequent commits.
