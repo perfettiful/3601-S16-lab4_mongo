@@ -12,11 +12,14 @@
                 <input ng-model="main.textField" type="text" size="50" placeholder="Add your Pet's name!">
                 <input ng-model="main.weightField" type="text" size="50" placeholder="Add Your Pet's weight!">
                 <input type="submit" value="submit" class="btn btn-primary">
-                <span class="floatRight">Items in this list: {{main.itemsInList()}}</span>
+                <span class="floatRight"># Pets in your List: {{main.itemsInList()}}</span>
             </form>
 
+
+            <div class="text-center">Most Heavy Pet: {{main.heavy.text}}, Weight: {{main.heavy.weight}}</div>
+
         </li>
-        <li class="list-group-item" ng-repeat="test in main.data">{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="main.removeData($index)"></span></li>
+        <li class="list-group-item" ng-repeat="test in main.data">Pet's Name: {{test.text}} | Pet's Weight: {{test.weight}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="main.removeData($index)"></span></li>
 
     </ul>
 </div>

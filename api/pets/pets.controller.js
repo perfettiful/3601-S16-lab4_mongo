@@ -52,3 +52,16 @@ exports.destroy = function(req, res) {
       });
     });
 };
+
+exports.getHeavyPet = function(req, res) {
+    Pet.find({}, null, {skip: 0, limit:1, sort:{weight: -1}},  function (err, pets) {
+        if (err) {
+            console.log("We experienced an error retrieving your data from database!");
+            res.send(err)
+        } else {
+            res.json(pets);
+
+            // Access results through JSON
+        }
+    });
+};
