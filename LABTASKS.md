@@ -28,11 +28,12 @@
 
 -  What functions are defined in the controller? How do they change the database data?
 
-> The three functions contained in the controller are index, create and destroy.
+> The three functions contained in the controller are index which finds all the pets in the database,
+>create adds a "Pet" to the database and destroy which finds a "Pet" by its pet ID and then removes it from the database or throws a "404 not found" error if the pet does not exist..
 
 -  How does one get or delete elements in the database?
 
-> It appears the create fct will retrieve data from the database, whereas the detroy fct will delete data from it.
+> It appears the index fct will retrieve data from the database, whereas the destroy fct will delete data from it.
 
 ##### What is the purpose of index.js in the api/pets? Where is it referenced?
 
@@ -40,21 +41,26 @@
 
 ##### What views are used in the project?
 
->
+> We have a "main" view in the /client/views/main folder, we have a "about" view in the /client/views/about folder and
+ also a "404" view in the /client/views/404 folder.
 
 ##### We've seen a few different ways to display HTML in the last couple labs (straight, individual HTML pages and components being added to HTML). How are HTML files combined and displayed in this lab? 
 
->
+>HTML pages are generated with both some straight HTML in files as well as HTML added through Angular. Angular uses
+controllers to add dynamic data to the pages and we can use Angular to include certain HTML pages on other pages.
+ For example, main.html is included and displayed in our index.html using Angular.
 
 >Protip: main.html isn't a full HTML document, so how does it get displayed?
 
 ##### Where is the code for the navigation bar located? How is it connected to the pages of the project?
 
->
+>It is located in /client/components/navbar. It is added to pages such as /client/view/main/main.html by using
+ng-include and it loads the navbar.
 
 ##### client/app.js performs client-side routing. How do you think it works?
 
->
+>The client-sided router looks for the requested route in our appModule. We have routes defined in about.js,
+main.js, etc. These routes look for a url such as "/about" and then display data.
 
 ## Part 2: Add another field to pet data.
 
